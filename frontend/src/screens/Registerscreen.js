@@ -27,7 +27,7 @@ export default function Registerscreen() {
           
           try {
             setloading(true)
-            const result = await axios.post('/api/users/register',user)
+            const result = await axios.post(process.env.REACT_APP_BASE_URL + '/api/users/register',user)
             setloading(false)
             setsuccess(true)
             setemail('')

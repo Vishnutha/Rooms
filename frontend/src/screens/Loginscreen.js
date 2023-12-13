@@ -31,7 +31,7 @@ export default function Loginscreen() {
     }
       try {
         setloading(true)
-        const result = await (await axios.post('/api/users/login',user)).data
+        const result = await (await axios.post(process.env.REACT_APP_BASE_URL + '/api/users/login',user)).data
         localStorage.setItem('currentUser',JSON.stringify(result))
         window.location.href='/'
       } catch (error) {

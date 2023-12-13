@@ -62,7 +62,7 @@ function Homescreen() {
   useEffect(async () => {
     try {
       setloading(true);
-      const rooms = await (await axios.get("/api/rooms/getallrooms")).data;
+      const rooms = await (await axios.get(process.env.REACT_APP_BASE_URL + "/api/rooms/getallrooms")).data;
       console.log(rooms);
       sethotels(rooms);
       setduplicatehotes(rooms)

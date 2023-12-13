@@ -56,7 +56,7 @@ export function Bookings() {
     try {
       setloading(true);
       const data = await (
-        await axios.get("/api/bookings/getallbookings")
+        await axios.get(process.env.REACT_APP_BASE_URL + "/api/bookings/getallbookings")
       ).data;
       setbookings(data);
       setloading(false);
@@ -110,7 +110,7 @@ export function Rooms() {
     try {
       setloading(true);
       const data = await (
-        await axios.get("/api/rooms/getallrooms")
+        await axios.get(process.env.REACT_APP_BASE_URL + "/api/rooms/getallrooms")
       ).data;
       setrooms(data);
       setloading(false);
@@ -163,7 +163,7 @@ export function Users(){
   useEffect(async() => {
 
     try {
-      const data = await (await axios.get('/api/users/getallusers')).data
+      const data = await (await axios.get(process.env.REACT_APP_BASE_URL + '/api/users/getallusers')).data
       setusers(data)
       setloading(false)
     } catch (error) {
@@ -226,7 +226,7 @@ export function Addroom() {
           rentperday, maxcount ,description ,phonenumber ,type ,image1 ,image2 ,image3
       }
       try {
-          const result = await axios.post('/api/rooms/addroom' , roomobj)
+          const result = await axios.post(process.env.REACT_APP_BASE_URL + '/api/rooms/addroom' , roomobj)
       } catch (error) {
           
       }
